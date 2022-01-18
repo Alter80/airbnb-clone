@@ -1,11 +1,13 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Search from '../Shared/Search/Search';
 
 import './Banner.css'
 
 const Banner = () => {
 
+    const history = useHistory();
     const [showSearch, setShowSearch] = useState(false);
 
 
@@ -24,7 +26,7 @@ const Banner = () => {
 
                 <h5>Plan a different kind of gataway to uncover the hidden gems near you.</h5>
 
-                <Button variant='outlined'>Explore Nearby</Button>
+                <Button variant='outlined' onClick={() => history.push('/search')}>Explore Nearby</Button>
             </div>
         </div>
     );
